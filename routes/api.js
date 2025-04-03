@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
+const sendEmail = require('../utils/sendEmail');
 
 router.post('/auth/callback', async (req, res) => {
   const { token, email } = req.body;
