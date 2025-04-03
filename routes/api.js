@@ -18,15 +18,6 @@ router.post('/auth/callback', async (req, res) => {
     const userInfo = response.data;
     if (userInfo.email !== email) throw new Error('Invalid email');
 
-    // const emailOptions = {
-    //   from: process.env.SMTP_USER,
-    //   to: email,
-    //   subject: 'Auth0 Token',
-    //   text: `Your token: ${token}`,
-    // };
-
-    // await transporter.sendMail(emailOptions);
-
     const resp = await sendEmail(
       email,
       'Your Authentication Token',
@@ -37,6 +28,7 @@ router.post('/auth/callback', async (req, res) => {
     res.json({ message: 'Email sent successfully!' });
     // res.json({ message: 'Token sent to email!' });
   } catch (error) {
+    console.log(error);
     res.status(401).json({ error: 'Invalid token' });
   }
 });
