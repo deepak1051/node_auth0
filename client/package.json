@@ -12,6 +12,7 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.3.0",
     "@tailwindcss/vite": "^4.1.2",
+    "04-april-auth0": "file:..",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
