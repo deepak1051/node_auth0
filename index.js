@@ -8,10 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.use('/api', require('./routes/api'));
-app.get('/', (req, res) => {
-  res.send('O la');
-});
+app.use('/api', require('./routes/api'));
 
 if (process.env.NODE_ENV === 'production') {
   const __dirname = path.resolve();
